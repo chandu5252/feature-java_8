@@ -1,0 +1,7 @@
+FROM dockerfile/java:oracle-java8
+
+VOLUME /tmp
+ADD Practice8.jar /opt/Practice8/
+EXPOSE 8080
+WORKDIR /opt/Practice8/
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-Xms512m", "-Xmx1g", "-jar", "Practice8.jar"]
